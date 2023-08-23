@@ -1,0 +1,70 @@
+// 巢狀結構
+// 子層可以寫在裡面
+body {
+    background-color: red
+    h1 {
+        color: green;
+    }
+}
+
+// &連接父層
+p {
+    &:hover {
+        color: red;
+    }
+}
+
+// 屬性嵌套
+// 相同前綴的就可以
+div {
+    background: {
+        color: purple;
+        repeat: repeat;
+    }
+}
+
+// $變數
+$main-color: blue;
+$sub-color: blue;
+
+nav {
+    color: $main-color;
+}
+
+// @mixin
+// 管理重複的屬性
+@mixin aa {
+    padding: 0%;
+    margin: 20px;
+}
+
+div {
+    @include aa;
+}
+// 可用參數更有彈性
+@mixin basic-space($mg, $pd) {
+    padding: $mg;
+    margin: $pd;
+}
+.wrap {
+    @include basic-space(0, 1rem);
+}
+.box {
+    @include basic-space(1rem, 0.5rem);
+}
+
+// ％ ＠extend
+%can_be_extend {
+    padding: 2rem;
+    margin: 2rem;
+}
+div {
+    @extend %can_be_extend;
+}
+// @extend只會出現一段@mixin是整理後每行都會出現
+div {
+    background: #000;
+}
+
+
+//@import 某個檔案
