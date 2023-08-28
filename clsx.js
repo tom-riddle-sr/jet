@@ -11,7 +11,7 @@ import clsx from "clsx"
 const buttonClass = clsx('button', {
     'active': isActive,
     'disabled': isDisabled
-  });
+  }); 
 
   //button是永久存在的
   //"active"會根據isActive的布林值決定會否顯示
